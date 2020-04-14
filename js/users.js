@@ -25,8 +25,11 @@ window.onload = () => {
                 <th scope="row">${index + 1}</th>
                 <td>${user.id}</td>
                 <td>${fullName}</td>
+                <td>${user.username}</td>
+                <td>${user.userType}</td>
                 <td>${user.phoneNumber}</td>
                 <td>${user.address}</td>
+                <td>${user.isLocked}</td>
             </tr>
             `;
         return row;

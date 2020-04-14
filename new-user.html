@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new user</title>
+    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/common.css">
+    <script defer src="./js/common.js"></script>
+    <script defer src="./js/new-user.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">CS472</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="homeMenu">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" id="userMenu">
+                        <a class="nav-link" href="./users.html">User</a>
+                    </li>
+                    <li class="nav-item" id="doctorMenu">
+                        <a class="nav-link" href="./doctors.html">Doctor</a>
+                    </li>
+                    <li class="nav-item" id="patientMenu">
+                        <a class="nav-link" href="./patients.html">Patient</a>
+                    </li>
+                    <li class="nav-item" id="medicineMenu">
+                        <a class="nav-link" href="./medicines.html">Medicine</a>
+                    </li>
+                    <li class="nav-item" id="appointmentMenu">
+                        <a class="nav-link" href="./appointments.html">Appointment</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a id="username" class="mr-sm-2" style="color: white;">Admin</a>
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="signOutButton">Sign out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <br>
+            <h2>Add new user</h2>
+            <br>
+        </div>
+        <form id="form" method="POST">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="firstName">*First name</label>
+                        <input type="text" class="form-control" id="firstName" required autofocus>
+                    </div>
+                    <div class="col">
+                        <label for="middleName">Middle name</label>
+                        <input type="text" class="form-control" id="middleName">
+                    </div>
+                    <div class="col">
+                        <label for="lastName">*Last name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="userName">*Username</label>
+                        <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="col">
+                        <label for="userType">User type</label>
+                        <select class="form-control" id="userType">
+                            <option value="1">Admin</option>
+                            <option value="2">Doctor</option>
+                            <option value="3">Patient</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="password">*Password</label>
+                        <input type="password" class="form-control" id="password" required minlength="5">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">*PhoneNumber</label>
+                <input type="tel" class="form-control" id="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="address">*Address</label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="isLocked">
+                <label class="form-check-label" for="isLocked">Is locked</label>
+            </div>
+            <br>
+            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+            <button type="submit" class="btn btn-outline-success">Save</button>
+        </form>
+    </div>
+</body>
+
+</html>
