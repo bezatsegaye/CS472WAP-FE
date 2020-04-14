@@ -14,7 +14,7 @@ function updateNavBar() {
             const adminActions = ["homeMenu", "doctorMenu", "patientMenu", "medicineMenu"];
             adminActions.forEach(item => document.getElementById(item).style.display = "block");
         } else if (role === "doctor") {
-            const doctorRoles = ["appointmentMenu"];
+            const doctorRoles = ["appointmentMenu", "checkInOutMenu"];
             doctorRoles.forEach(item => document.getElementById(item).style.display = "block");
         } else if (role === "patient") {
             const patientRoles = ["appointmentMenu"];

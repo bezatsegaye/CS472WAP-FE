@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctors</title>
+    <title>Patient Check In / Check Out</title>
     <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/common.css">
-    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script defer src="./js/common.js"></script>
-    <script defer src="./js/doctors.js"></script>
 </head>
 
 <body>
@@ -52,23 +50,53 @@
     <div class="container">
         <div>
             <br>
-            <h2 class="float-left">List of doctors</h2>
-            <a href="./new-doctor.html"><button class="btn btn-outline-success float-right">Add New Doctor</button></a>
+            <h2>Patient Check In / Check Out</h2>
             <br>
         </div>
-        <table class="table table-striped" id="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Full name</th>
-                    <th scope="col">Phone number</th>
-                    <th scope="col">Address</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <form>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="checkInOutId">*Check In Out ID</label>
+                        <input type="number" class="form-control" id="checkInOutId" required>
+                    </div>
+                    <div class="col">
+                        <label for="appointmentId">Appointment ID</label>
+                        <input type="number" class="form-control" id="appointmentId">
+                    </div>
+                    <div class="col">
+                        <label for="doctorId">*Doctor ID</label>
+                        <input type="text" class="form-control" id="doctorId" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="checkInDateTime">*Check In Date & Time</label>
+                        <input type="datetime-local" class="form-control" id="checkInDateTime" required>
+                    </div>
+                    <div class="col">
+                        <label for="checkOutDateTime">*Check Out Date & Time</label>
+                        <input type="datetime-local" class="form-control" id="checkOutDateTime" required>
+                    </div>
+                    <div class="col">
+                        <label for="charge">*Chearge</label>
+                        <input type="number" class="form-control" id="charge" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descritption">*Descritption</label>
+                <br>
+                <textarea name="" id="descritption" class="form-control" cols="150" rows="8"></textarea>
+            </div>
+            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+            <button type="submit" class="btn btn-outline-success">Check In Out</button>
+        </form>
     </div>
+
+
 </body>
 
 </html>
