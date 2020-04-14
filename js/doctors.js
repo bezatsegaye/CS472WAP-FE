@@ -8,11 +8,14 @@ window.onload = () => {
             .then(response => response.json())
             .then((doctors) => {
                 doctors.forEach((item, index) => {
+                    const fullName = [item.firstName, item.middleName, item.lastName]
+                        .filter(item => item !== null)
+                        .join(" ")
                     const row = `
                     <tr>
                         <th scope="row">${index + 1}</th>
                         <td>${item.id}</td>
-                        <td>${item.firstName} ${item.middleName} ${item.lastName}</td>
+                        <td>${fullName}</td>
                         <td>${item.phoneNumber}</td>
                         <td>${item.address}</td>
                     </tr>
