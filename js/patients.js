@@ -1,13 +1,13 @@
 "use strict";
 
 window.onload = () => {
-    getDoctors()
+    getPatients()
 
-    function getDoctors() {
-        fetch("../json/doctors.json")
+    function getPatients() {
+        fetch("../json/patients.json")
             .then(response => response.json())
-            .then((doctors) => {
-                doctors.forEach((item, index) => {
+            .then((patients) => {
+                patients.forEach((item, index) => {
                     const fullName = [item.firstName, item.middleName, item.lastName]
                         .filter(item => item !== null)
                         .join(" ")

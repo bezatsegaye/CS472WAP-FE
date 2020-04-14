@@ -8,10 +8,10 @@ function updateNavBar() {
     if (username === "" || role === "") {
         window.location = "../signin.html";
     } else {
-        const allMenuItems = ["homeMenu", "doctorMenu", "patientMenu", "medicineMenu", "appointmentMenu"];
+        const allMenuItems = ["userMenu", "homeMenu", "doctorMenu", "patientMenu", "medicineMenu", "appointmentMenu"];
         allMenuItems.forEach(item => document.getElementById(item).style.display = "none");
         if (role === "admin") {
-            const adminActions = ["homeMenu", "doctorMenu", "patientMenu", "medicineMenu"];
+            const adminActions = ["userMenu", "homeMenu", "doctorMenu", "patientMenu", "medicineMenu"];
             adminActions.forEach(item => document.getElementById(item).style.display = "block");
         } else if (role === "doctor") {
             const doctorRoles = ["appointmentMenu", "checkInOutMenu"];
