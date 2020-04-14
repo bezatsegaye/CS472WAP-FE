@@ -1,11 +1,21 @@
 "use strict";
 
-const username = getCookie("username");
-if (username === "") {
-    window.location = "../signin.html";
-} else {
-    document.getElementById("username").innerHTML = `Hi, ${username}`;
+updateNavBar();
+
+function updateNavBar() {
+    const username = getCookie("username");
+    if (username === "") {
+        window.location = "../signin.html";
+    } else {
+        document.getElementById("username").innerHTML = `Hi, ${username}`;
+    }
 }
+
+document.getElementById("signOutButton").addEventListener("click", (event) => {
+    document.cookie = "username=;";
+    document.cookie = "role=;";
+    window.location = "../signin.js";
+});
 
 // Whatever... I got this chunk of code from the internet. Will check later... xD
 function getCookie(cname) {
