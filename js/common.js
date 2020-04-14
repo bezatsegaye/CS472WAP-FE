@@ -4,9 +4,22 @@ updateNavBar();
 
 function updateNavBar() {
     const username = getCookie("username");
-    if (username === "") {
+    const role = getCookie("role");
+    if (username === "" || role === "") {
         window.location = "../signin.html";
     } else {
+        const allMenuItems = ["homeMenu", "doctorMenu", "patientMenu", "medicineMenu", "appointmentMenu"];
+        allMenuItems.forEach(item => document.getElementById(item).style.display = "none");
+        if (role === "admin") {
+            const adminActions = ["homeMenu", "doctorMenu", "patientMenu", "medicineMenu"];
+            adminActions.forEach(item => document.getElementById(item).style.display = "block");
+        } else if (role === "doctor") {
+            const doctorRoles = ["appointmentMenu"];
+            doctorRoles.forEach(item => document.getElementById(item).style.display = "block");
+        } else if (role === "patient") {
+            const patientRoles = ["appointmentMenu"];
+            patientRoles.forEach(item => document.getElementById(item).style.display = "block");
+        }
         document.getElementById("username").innerHTML = `Hi, ${username}`;
     }
 }
