@@ -31,33 +31,32 @@ window.onload = () => {
                 <td class="fname">${fullName}</td>
                 <td class = "phone">${patients.phoneNumber}</td>
                 <td class = "address">${patients.address}</td>
-                <td><button type="button" id ="" val class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                         Edit
-                       </button> </td>                    
+               
+                <td><button type="button" id ="" val class="btnEdit btn-primary" data-toggle="modal" data-target="#editPatientModal">
+                Edit
+                </button> </td>   
+                <td><button type="button" id ="" val class="btnDelete btn-primary" data-toggle="modal" data-target="#deletePatientModal">
+                Delete
+                </button> </td> 
+                                 
             </tr>
             `;
         return row;
     }
-    $(document).on("click", ".btn", function() {
+    $(document).on("click", ".btnEdit", function() {
       var $row = $(this).closest("tr");    // Find the row
         var $id = $row.find(".id").text(); // Find the text id
         var $fname = $row.find(".fname").text(); // Find the text name
         var $phone = $row.find(".phone").text(); // Find the text phone
         var $address = $row.find(".address").text(); // Find the text address
-        //console.log($text);
-        // Let's test it out
-        //alert($text);
-           
         $("#patientId").val($id);
         $("#patientName").val($fname);
         $("#patientPhone").val($phone);
         $("#patientAddress").val($address);
-    // $(".btn").click(function() {
-    //     var $row = $(this).closest("tr");    // Find the row
-    //     console.log($row);
-    //     var $text = $row.find(".nr").text(); // Find the text
-    //     console.log($text);
-    //     // Let's test it out
-    //     //alert($text);
      });
+     $(document).on("click", ".btnDelete", function() {
+        var $row = $(this).closest("tr");    // Find the row
+          var $id = $row.find(".id").text(); // Find the text id
+          $("#deletePatientId").val($id);
+       });
 }
