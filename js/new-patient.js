@@ -1,6 +1,7 @@
 "use strict";
 
 window.onload = () => {
+    
 
     document.getElementById("form").addEventListener("submit", (event) => {
         event.preventDefault();

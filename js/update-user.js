@@ -12,10 +12,12 @@ window.onload = () => {
             document.getElementById("middleName").value = window.localStorage.getItem("middleName");
         }
         document.getElementById("lastName").value = window.localStorage.getItem("lastName");
+        document.getElementById("userName").value = window.localStorage.getItem("username");
         document.getElementById("phoneNumber").value = window.localStorage.getItem("phoneNumber");
         document.getElementById("address").value = window.localStorage.getItem("address");
-        //window.localStorage.getItem("specialization");
-        ["firstName", "middleName", "lastName", "phoneNumber", "address", "specialization"].forEach(item => {
+        document.getElementById("isLocked").checked = window.localStorage.getItem("isLocked") == "true";
+        document.getElementById("userType").selectedIndex = parseInt(window.localStorage.getItem("userType")) - 1;
+        ["firstName", "middleName", "lastName", "phoneNumber", "address", "username", "isLocked", "userType"].forEach(item => {
             window.localStorage.removeItem(item);
         });
     }

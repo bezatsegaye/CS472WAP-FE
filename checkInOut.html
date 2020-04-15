@@ -8,6 +8,8 @@
     <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/common.css">
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script defer src="./js/checkInOut.js"></script>
     <script defer src="./js/common.js"></script>
 </head>
 
@@ -43,7 +45,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a id="username" class="mr-sm-2" style="color: white;">Admin</a>
+                    <a id="username" class="mr-sm-2"></a>
                     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="signOutButton">Sign out</button>
                 </form>
             </div>
@@ -56,46 +58,100 @@
             <h2>Patient Check In / Check Out</h2>
             <br>
         </div>
-        <form>
+        <form id="form" method="POST">
             <div class="form-group">
                 <div class="row">
                     <div class="col">
-                        <label for="checkInOutId">*Check In Out ID</label>
-                        <input type="number" class="form-control" id="checkInOutId" required>
+                        <label for="patientName">*Patient Name</label>
+                        <input type="text" class="form-control" id="patientName" required>
                     </div>
                     <div class="col">
-                        <label for="appointmentId">Appointment ID</label>
-                        <input type="number" class="form-control" id="appointmentId">
-                    </div>
-                    <div class="col">
-                        <label for="doctorId">*Doctor ID</label>
-                        <input type="text" class="form-control" id="doctorId" required>
+                        <label for="doctorName">*Doctor Name</label>
+                        <input type="text" class="form-control" id="doctorName" required>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <div class="row">
                     <div class="col">
-                        <label for="checkInDateTime">*Check In Date & Time</label>
-                        <input type="datetime-local" class="form-control" id="checkInDateTime" required>
+                        <label for="checkInDateTime">*Check In Date & Time</label><br>
+                        <label id="checkInDateTime">--/--/---- --:-- --</label>
+                        <!--<input type="datetime-local" class="form-control" id="checkInDateTime" required>-->
                     </div>
                     <div class="col">
-                        <label for="checkOutDateTime">*Check Out Date & Time</label>
-                        <input type="datetime-local" class="form-control" id="checkOutDateTime" required>
+                        <label for="checkOutDateTime">*Check Out Date & Time</label><br>
+                        <label id="checkOutDateTime">--/--/---- --:-- --</label>
                     </div>
                     <div class="col">
-                        <label for="charge">*Chearge</label>
+                        <label for="charge">*Charge</label>
                         <input type="number" class="form-control" id="charge" required>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>Medicine Type(Choose all That Apply)</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Antibiotics" name="medicineType">
+                        <label class="form-check-label" for="defaultCheck1">Antibiotics</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Synthroid"  name="medicineType">
+                        <label class="form-check-label" for="defaultCheck1">Synthroid (levothyroxine)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Crestor"  name="medicineType">
+                        <label class="form-check-label" for="defaultCheck1">Crestor (rosuvastatin)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Nexium"  name="medicineType">
+                        <label class="form-check-label" for="defaultCheck1">Nexium (esomeprazole)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Advair Diskus"  name="medicineType">
+                        <label class="form-check-label" for="defaultCheck1">Advair Diskus (fluticasone)</label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <p>Disease Catagory(Select your history)</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="HeadAche" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">HeadAche</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Diabetis" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">Diabetis</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Dementia" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">Dementia</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Pregnancy" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">Pregnancy</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Depresion" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">Depresion</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Alergy" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">Alergy</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Flu" name="diseaseCatagory">
+                        <label class="form-check-label" for="defaultCheck1">Flu</label>
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="descritption">*Descritption</label>
                 <br>
                 <textarea name="" id="descritption" class="form-control" cols="150" rows="8"></textarea>
             </div>
             <button type="reset" class="btn btn-outline-secondary">Reset</button>
-            <button type="submit" class="btn btn-outline-success">Check In Out</button>
+            <button type="submit" class="btn btn-outline-success">Check IN / Out</button>
         </form>
     </div>
 

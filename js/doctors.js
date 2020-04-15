@@ -29,6 +29,7 @@ window.onload = () => {
                 <th scope="row">${index + 1}</th>
                 <td>${doctor.id}</td>
                 <td>${fullName}</td>
+                <td>${doctor.specialization}</td>
                 <td>${doctor.phoneNumber}</td>
                 <td>${doctor.address}</td>
             </tr>
@@ -43,6 +44,7 @@ window.onload = () => {
         window.localStorage.setItem("firstName", item.firstName);
         window.localStorage.setItem("lastName", item.lastName);
         window.localStorage.setItem("phoneNumber", item.phoneNumber);
+        window.localStorage.setItem("specialization", item.specialization);
         window.localStorage.setItem("address", item.address);
         window.location = "../update-doctor.html";
     });
