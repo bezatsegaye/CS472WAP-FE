@@ -58,7 +58,7 @@
             <h2>Patient Check In / Check Out</h2>
             <br>
         </div>
-        <form>
+        <form id="form" method="POST">
             <div class="form-group">
                 <div class="row">
                     <div class="col">
@@ -92,50 +92,50 @@
                 <div class="col-sm-6">
                     <p>Medicine Type(Choose all That Apply)</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Antibiotics" name="medicineType">
                         <label class="form-check-label" for="defaultCheck1">Antibiotics</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Synthroid"  name="medicineType">
                         <label class="form-check-label" for="defaultCheck1">Synthroid (levothyroxine)</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Crestor"  name="medicineType">
                         <label class="form-check-label" for="defaultCheck1">Crestor (rosuvastatin)</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Nexium"  name="medicineType">
                         <label class="form-check-label" for="defaultCheck1">Nexium (esomeprazole)</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="Advair Diskus"  name="medicineType">
                         <label class="form-check-label" for="defaultCheck1">Advair Diskus (fluticasone)</label>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <p>Disease Catagory(Select your history)</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="diseaseCatagory">
+                        <input class="form-check-input" type="checkbox" value="HeadAche" name="diseaseCatagory">
                         <label class="form-check-label" for="defaultCheck1">HeadAche</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="diseaseCatagory">
+                        <input class="form-check-input" type="checkbox" value="Diabetis" name="diseaseCatagory">
                         <label class="form-check-label" for="defaultCheck1">Diabetis</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="diseaseCatagory">
+                        <input class="form-check-input" type="checkbox" value="Dementia" name="diseaseCatagory">
                         <label class="form-check-label" for="defaultCheck1">Dementia</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="diseaseCatagory">
+                        <input class="form-check-input" type="checkbox" value="Pregnancy" name="diseaseCatagory">
                         <label class="form-check-label" for="defaultCheck1">Pregnancy</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="diseaseCatagory">
+                        <input class="form-check-input" type="checkbox" value="Depresion" name="diseaseCatagory">
                         <label class="form-check-label" for="defaultCheck1">Depresion</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" name="diseaseCatagory">
+                        <input class="form-check-input" type="checkbox" value="Alergy" name="diseaseCatagory">
                         <label class="form-check-label" for="defaultCheck1">Alergy</label>
                     </div>
                     <div class="form-check">
@@ -151,8 +151,7 @@
                 <textarea name="" id="descritption" class="form-control" cols="150" rows="8"></textarea>
             </div>
             <button type="reset" class="btn btn-outline-secondary">Reset</button>
-            <button id="checkInBtn" class="btn btn-outline-success">Check In</button>
-            <button type="submit" class="btn btn-outline-success">Check Out</button>
+            <button type="submit" class="btn btn-outline-success">Check IN / Out</button>
         </form>
     </div>
 
