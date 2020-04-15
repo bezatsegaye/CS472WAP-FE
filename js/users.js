@@ -20,13 +20,21 @@ window.onload = () => {
         const fullName = [user.firstName, user.middleName, user.lastName]
             .filter(item => item !== null)
             .join(" ")
+
+        let userType = "Admin";
+        if (user.userType === 2) {
+            userType = "Doctor";
+        } else if (user.userType === 3) {
+            userType = "Patient";
+        }
+
         const row = `
             <tr>
                 <th scope="row">${index + 1}</th>
                 <td>${user.id}</td>
                 <td>${fullName}</td>
                 <td>${user.username}</td>
-                <td>${user.userType}</td>
+                <td>${userType}</td>
                 <td>${user.phoneNumber}</td>
                 <td>${user.address}</td>
                 <td>${user.isLocked}</td>
