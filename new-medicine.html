@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patients</title>
+    <title>Add new medicine</title>
     <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/common.css">
-    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script defer src="./js/common.js"></script>
-    <script defer src="./js/patients.js"></script>
+    <script defer src="./js/new-user.js"></script>
 </head>
 
 <body>
@@ -31,11 +30,11 @@
                     <li class="nav-item" id="doctorMenu">
                         <a class="nav-link" href="./doctors.html">Doctor</a>
                     </li>
-                    <li class="nav-item active" id="patientMenu">
+                    <li class="nav-item" id="patientMenu">
                         <a class="nav-link" href="./patients.html">Patient</a>
                     </li>
                     <li class="nav-item" id="medicineMenu">
-                        <a class="nav-link" href="./medicines.html">Medicine</a>
+                        <a class="nav-link active" href="./medicines.html">Medicine</a>
                     </li>
                     <li class="nav-item" id="appointmentMenu">
                         <a class="nav-link" href="./appointments.html">Appointment</a>
@@ -52,21 +51,26 @@
     <div class="container">
         <div>
             <br>
-            <h2 class="float-left">List of patients</h2>
+            <h2>Add new medicine</h2>
             <br>
         </div>
-        <table class="table table-striped" id="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Full name</th>
-                    <th scope="col">Phone number</th>
-                    <th scope="col">Address</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <form id="form" method="POST">
+            <div class="form-group">
+                <label for="firstName">*Medicine name</label>
+                <input type="text" class="form-control" id="firstName" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="userType">*Medicine type</label>
+                <select class="form-control" id="userType">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <br>
+            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+            <button type="submit" class="btn btn-outline-success">Save</button>
+        </form>
     </div>
 </body>
 
